@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais uma tentativa</title>
+</head>
+<body>
+
+    <script>
+        let numeros = []; //criei uma variável para o array, mas não tenho ideia de como salvar os números digitados aqui dentro
+        let soma = 0; //pra iniciar a variável soma com zero para acumular os números informados
+
+        for (let i = 0; i < 5; i++) { //iniciei o loop com a variável i em 0 e rodando até menor que 20 e repetindo mais uma
+            let numero = parseInt(prompt(`Digite o número ${i + 1}`)); //criei um prompt onde solicito um número que vai acrescentando um a cada nova entrada, converti em número inteiro e coloquei em uma variável número
+            soma += numero; //cada número digitado é adicionado à variável soma para dar o resultado total
+
+        }
+        let media = soma / 5;
+        console.log("Números inseridos", numeros);
+        window.alert("Números inseridos: ", numeros);  
+        window.alert("Soma: " + soma);  
+        window.alert("Média: " + media);  
+    </script>
+    
+</body>
+</html>

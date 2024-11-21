@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afiliadas Gestão (VERDE)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+
+    <div class="container">
+        <header>
+            <div class="afiliadas">AFILIADAS</div>
+            <div class="logo"><img src="Logo cor 71b44d.png" alt="logo globo"></div>
+            <div class="gestao">GESTÃO</div>
+            <div class="usuario">Olá Hugo Leonardo</div>
+    </header>
+
+        <nav class="menuDeNavegacao">
+              <a href="#">AFILIADAS</a>  
+              <a href="#" class="active">TV ABERTA</a>               
+              <a href="#">INTERNET</a> 
+              <a href="#">FINANCEIRO</a>  
+              <a href="#">NOVA CATEGORIA</a>  
+        </nav>
+
+        <div class="breadcrumb">
+            CONVENÇÕES INTERNET > CONSULTAR
+        </div>
+
+        <section class="secaoConvenios">
+            <div class="caixaVerde">
+                <h2>CONVENÇÕES INTERNET</h2>
+                <div class="botoes_exportar_copiar">
+                    <button><i class="fas fa-file-export"></i> Exportar</button>
+                    <button><i class="fas fa-copy"></i>Cópia de Índices</button>
+                </div>
+            </div> 
+
+            <div class="consultarConvenios">
+                <h3>CONSULTAR CONVENÇÕES</h3>
+                <form>
+                    <div class="campos">
+                        <label for="afiliada">Afiliada</label>
+                        <input type="text" id="afiliada" name="afiliada">
+                    </div>
+                    
+                    <div class="campos">
+                        <label for="codigo">Código Contábil</label>
+                        <input type="text" name="codigo" id="codigo">
+                    </div>
+                    
+                    <div class="campos">
+                        <label for="mnemonico">Mnemonico</label>
+                        <input type="text" name="mnemonico" id="mnemonico">
+                    </div>
+                    
+                    <div class="campos">
+                        <label for="inativa" class="checkbox">
+                        <input type="checkbox" id="inativa" name="inativa"> Inativa
+                    </label>
+                    </div>
+                    
+                    
+                    <button type="submit"><i class="fas fa-search"></i>Buscar</button>
+                </form>
+                
+            </div>
+
+            <div class="resultadoConsulta">
+                <h3>RESULTADO DA CONSULTA</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Convenção</th>
+                            <th>Mnemônico</th>
+                            <th>Início</th>
+                            <th>Término</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5">Não há registros</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+        

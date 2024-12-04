@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        "sans": ["Poppins", "sans-serif"],
+      },
+      backgroundImage: {
+        "tenis": "url('/src/assets/bg.png')"
+      }
+    },
   },
   plugins: [],
 }

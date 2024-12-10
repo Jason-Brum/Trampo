@@ -565,3 +565,31 @@ h1 {
   width: 100px;
   height: 100px;
 }
+
+.w-96 {
+  width: 24rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.leading-8 {
+  line-height: 2rem;
+}

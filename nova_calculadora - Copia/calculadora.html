@@ -17,7 +17,7 @@
         }
 
         .calculadora {
-            background-color: brown;
+            background-color: darkslategray;
             border-radius: 10px;
             box-shadow: 0 4px 8px black;
             width: 320px;
@@ -62,7 +62,8 @@
         }
 
         .btn.numero {
-            background-color: #f9f9f9;
+            background-color: black;
+            color: white;
         }
 
         .btn.numero.zero {
@@ -70,27 +71,20 @@
         }
 
         .btn.operacao {
-            background-color: #f4a261;
+            background-color: lightslategrey;
             color: #ffffff;
         }
 
-        .btn.operacao.soma {
-            grid-row: span 2;
-        }
 
         .btn.igual {
-            background-color: #2a9d8f;
+            background-color: #10d392;
             color: #ffffff;
-            grid-column: span 3;
+            grid-column: span 2;
         }
 
-        .btn.onoff {
-            background-color: #ff6f61;
-            color: #ffffff;
-        }
 
         .btn.memoria {
-            background-color: #264653;
+            background-color: lightslategrey;
             color: #ffffff;
         }
 
@@ -124,11 +118,11 @@
             <button class="btn numero">1</button>
             <button class="btn numero">2</button>
             <button class="btn numero">3</button>
-            <button class="btn operacao soma" style="grid-row: span 2;">+</button>
-            <button class="btn numero zero">0</button>
+            <button class="btn operacao">+</button>
             <button class="btn numero">.</button>
-            <button class="btn igual" style="grid-column: span 3;">=</button>
-            <button class="btn onoff">ON/OFF</button>
+            <button class="btn numero">0</button>
+            <button class="btn igual" style="grid-column: span 2;">=</button>
+           
         </div>
     </div>
 </body>

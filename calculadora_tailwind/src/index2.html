@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora com Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-emerald-300 flex items-center justify-center h-screen">
+    <div class="bg-gray-600 rounded-lg shadow-lg w-80 p-5">
+        <div class="mb-5">
+            <input 
+                type="text" 
+                id="calc-display" 
+                readonly 
+                class="w-full h-16 text-2xl text-right p-2 rounded-md bg-gray-200 shadow-inner text-pink-500 focus:outline-none"
+            >
+        </div>
+        <div class="grid grid-cols-4 gap-2">
+            <button class="bg-blue-600 text-white rounded-md p-4 hover:bg-blue-800 text-lg">MRC</button>
+            <button class="bg-blue-600 text-white rounded-md p-4 hover:bg-blue-800 text-lg">M+</button>
+            <button class="bg-blue-600 text-white rounded-md p-4 hover:bg-blue-800 text-lg">M-</button>
+            <button class="bg-orange-500 text-white rounded-md p-4 hover:bg-orange-400 text-lg">%</button>
+            <button class="bg-orange-500 text-white rounded-md p-4 hover:bg-orange-400 text-lg">CE</button>
+            <button class="bg-orange-500 text-white rounded-md p-4 hover:bg-orange-400 text-lg">C</button>
+            <button class="bg-orange-500 text-white rounded-md p-4 hover:bg-orange-400 text-lg">+/-</button>
+            <button class="bg-orange-500 text-white rounded-md p-4 hover:bg-orange-400 text-lg">&divide;</button>
+            <button class="bg-black  text-white rounded-md p-4 hover:bg-gray-700 text-lg">7</button>
+            <button class="bg-black  text-white rounded-md p-4 hover:bg-gray-700 text-lg">8</button>
+            <button class="bg-black  text-white rounded-md p-4 hover:bg-gray-700 text-lg">9</button>
+            <button class="bg-orange-500 text-white rounded-md p-4 hover:bg-orange-400 text-lg">&times;</button>
+            <button class="bg-black  text-white rounded-md p-4 hover:bg-gray-700 text-lg">4</button>
+            <button class="bg-black  text-white rounded-md p-4 hover:bg-gray-700 text-lg">5</button>
+            <button class="bg-black  text-white rounded-md p-4 hover:bg-gray-700 text-lg">6</button>
+            <button class="bg-orange-500 text-white rounded-md p-4 hover:bg-orange-400 text-lg">&minus;</button>
+            <button class="bg-black  text-white rounded-md p-4 hover:bg-gray-700 text-lg">1</button>
+            <button class="bg-black  text-white rounded-md p-4 hover:bg-gray-700 text-lg">2</button>
+            <button class="bg-black  text-white rounded-md p-4 hover:bg-gray-700 text-lg">3</button>
+            <button class="bg-orange-500 text-white rounded-md p-4 hover:bg-orange-400">&plus;</button>
+            <div class="col-span-3 grid grid-cols-3 gap-2">
+                <button class="bg-black  text-white rounded-md p-4 hover:bg-gray-700 text-lg">0</button>
+                <button class="bg-black  text-white rounded-md p-4 hover:bg-gray-700 text-lg">.</button>
+                <button class="bg-red-600 text-white rounded-md p-4 hover:bg-red-400 text-lg">=</button>
+            </div>
+            <button class="bg-green-500  text-white rounded-md p-4 hover:bg-green-600 flex items-center justify-center">On/Off</button>
+        </div>
+    </div>
+</body>
+</html>

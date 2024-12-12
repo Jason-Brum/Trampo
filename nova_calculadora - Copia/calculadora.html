@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculadora {
+            background-color: brown;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px black;
+            width: 320px;
+            padding: 20px;
+        }
+
+        .display {
+            margin-bottom: 20px;
+        }
+
+        #calc-display {
+            width: 100%;
+            height: 60px;
+            font-size: 20px;
+            text-align: right;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: whitesmoke;
+            box-shadow: inset 0 2px 4px black;
+            color: pink;
+        }
+
+        .botoes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #d6d6d6;
+        }
+
+        .btn.numero {
+            background-color: #f9f9f9;
+        }
+
+        .btn.numero.zero {
+            grid-column: span 2;
+        }
+
+        .btn.operacao {
+            background-color: #f4a261;
+            color: #ffffff;
+        }
+
+        .btn.operacao.soma {
+            grid-row: span 2;
+        }
+
+        .btn.igual {
+            background-color: #2a9d8f;
+            color: #ffffff;
+            grid-column: span 3;
+        }
+
+        .btn.onoff {
+            background-color: #ff6f61;
+            color: #ffffff;
+        }
+
+        .btn.memoria {
+            background-color: #264653;
+            color: #ffffff;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+        <div class="display">
+            <input type="text" id="calc-display" readonly>
+        </div>
+        <div class="botoes">
+            <button class="btn memoria">MRC</button>
+            <button class="btn memoria">M+</button>
+            <button class="btn memoria">M-</button>
+            <button class="btn operacao">%</button>
+            <button class="btn operacao">CE</button>
+            <button class="btn operacao">C</button>
+            <button class="btn operacao">+/-</button>
+            <button class="btn operacao">÷</button>
+            <button class="btn numero">7</button>
+            <button class="btn numero">8</button>
+            <button class="btn numero">9</button>
+            <button class="btn operacao">×</button>
+            <button class="btn numero">4</button>
+            <button class="btn numero">5</button>
+            <button class="btn numero">6</button>
+            <button class="btn operacao">-</button>
+            <button class="btn numero">1</button>
+            <button class="btn numero">2</button>
+            <button class="btn numero">3</button>
+            <button class="btn operacao soma" style="grid-row: span 2;">+</button>
+            <button class="btn numero zero">0</button>
+            <button class="btn numero">.</button>
+            <button class="btn igual" style="grid-column: span 3;">=</button>
+            <button class="btn onoff">ON/OFF</button>
+        </div>
+    </div>
+</body>
+</html>

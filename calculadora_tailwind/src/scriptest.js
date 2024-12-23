@@ -1,42 +1,42 @@
-let numeroArmazenado = ''; //variável para o número digitado
-let numeroAnterior = ''; //variável para o número que foi digitado antes
-let operacao = null; //variável usada para armazenar a operação escolhida
-let operacaoFinalizada = false;
+let numeroArmazenado = ''; // Número atualmente digitado
+let numeroAnterior = ''; // Número armazenado antes da operação
+let operacao = null; // Operação escolhida
+let operacaoFinalizada = false; // Controle se uma operação foi concluída
 
-const display = document.getElementById('calc-display')  //uso DOM para acessar o HTML do visor da calculadora para exibir números digitados e resultado da operação
+const display = document.getElementById('calc-display'); // Acessa o visor da calculadora
 
-
-function atualizaDisplay(value) {  //função para atualizar os valores no visor
-    display.value = value; //value conmtém o num que será mostrado no visor
+// Função para atualizar o visor
+function atualizaDisplay(value) {
+    display.value = value;
 }
 
-//seleciona todos os botões da classe num-btn, já o .forEach adiciona um evento clique em cada botão
-document.querySelectorAll('.num-btn').forEach (button => {
+// Evento para os botões numéricos
+document.querySelectorAll('.num-btn').forEach(button => {
     button.addEventListener('click', () => {
-        if (operacaoFinalizada){
-            numeroArmazenado = ' '; //se a op realizada for true, o número é convertido em uma string vazia para que o usuário digite um novo número
-            operacaoFinalizada = false
+        if (operacaoFinalizada) {
+            numeroArmazenado = ''; // Limpa o número armazenado para iniciar um novo cálculo
+            operacaoFinalizada = false; // Redefine o estado de operação finalizada
         }
-
-        numeroArmazenado = numeroArmazenado + button.textContent;
-        atualizaDisplay(numeroArmazenado);
-    }) ;
-
+        numeroArmazenado += button.textContent; // Concatena o número clicado
+        atualizaDisplay(numeroArmazenado); // Atualiza o visor
+    });
 });
 
-//evento para o botão de soma
+// Evento para o botão de soma
 document.getElementById('btn-soma').addEventListener('click', () => {
-    const num1 = parseFloat(numeroAnterior || 0); // rimeiro número
-    const num2 = parseFloat(numeroArmazenado || 0); // segundo número
-    const result = num1 + num2; // Realiza a soma
-
-    atualizaDisplay(result); //mostra o resultado imediatamente
-    numeroAnterior = result.toString(); // Armazena o resultado para operações futuras
-    numeroArmazenado = ''; // Limpa o número atual para entrada do próximo número
-    operacao = 'soma'; // Define a operação atual como soma
-    operacaoFinalizada = false; // Permite continuar operando
+    if (numeroArmazenado !== '') {
+        if (numeroAnterior !== '') {
+            numeroAnterior = (parseFloat(numeroAnterior) + parseFloat(numeroArmazenado)).toString();
+        } else {
+            numeroAnterior = numeroArmazenado;
+        }
+        operacao = 'soma';
+        numeroArmazenado = ''; // Limpa o número atual
+        atualizaDisplay(numeroAnterior);
+    }
 });
 
+// Evento para o botão de subtração
 document.getElementById('btn-subtracao').addEventListener('click', () => {
     if (numeroArmazenado !== '') {
         numeroAnterior = numeroArmazenado;
@@ -87,7 +87,6 @@ document.querySelector('.bg-green-500').addEventListener('click', () => {
                 result = num2 !== 0 ? num1 / num2 : 'Erro'; // Evita divisão por zero
                 break;
             default:
-                atualizaDisplay('Erro');
                 return;
         }
 

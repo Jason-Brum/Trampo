@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova tela de login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200 flex justify-center items-center h-screen">
+    <div class="w-96 flex flex-col items-center bg-white shadow-lg rounded-md">
+        <!-- Cabeçalho -->
+        <div class="w-full bg-blue-500 flex justify-between items-center py-2 px-10 rounded-t-md text-white">
+            <div class="text-2xl font-bold">AFILIADAS</div>
+            <div class="w-10 h-10">
+                <img src="logo 40x40.png" alt="logo pequeno da Rede Globo" class="w-full h-full">
+            </div>
+            <div class="text-2xl font-bold">GESTÃO</div>
+        </div>
+
+        <!-- Formulário de Login -->
+        <div class="w-full p-6">
+            <form id="formularioDeLogin" class="space-y-6">
+                <!-- Campo Usuário -->
+                <div>
+                    <label for="username" class="block text-blue-500 font-bold mb-2">Usuário:</label>
+                    <input type="text" id="username" name="username" required
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <!-- Campo Senha -->
+                <div>
+                    <label for="password" class="block text-blue-500 font-bold mb-2">Senha:</label>
+                    <input type="password" id="password" name="password" required
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <!-- Botões -->
+                <div class="flex justify-around">
+                    <button type="submit" class="bg-blue-500 text-white px-7 py-2 rounded shadow hover:bg-blue-600">Login</button>
+                    <button type="button" id="cancelButton" class="bg-white text-gray-700 px-5 py-2 border border-gray-300 rounded shadow hover:bg-gray-100">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        //uswo do DOM para buscar o id do formulario. submit é disparado no envio do formulário
+        document.getElementById('formularioDeLogin').addEventListener('submit', function(event) {
+            const username = document.getElementById('username').value;   //utilização do método value para capturar os dados dos campos usuário e senha
+            const password = document.getElementById('password').value;
+
+            //verifica se o campo de usuário é um e-mail válido
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(username)) {
+                alert('Por favor, insira um e-mail válido no campo Usuário.');
+                event.preventDefault();
+                return;
+            }
+
+            //verificar se o campo de senha contém apenas números
+            const numericRegex = /^\d+$/;
+            if (!numericRegex.test(password)) {
+                alert('A senha deve conter apenas números.');
+                event.preventDefault();
+            }
+        });
+    </script>
+    
+</body>
+</html>

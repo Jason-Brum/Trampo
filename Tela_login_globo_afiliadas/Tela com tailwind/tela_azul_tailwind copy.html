@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova tela de login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200 flex justify-center items-center h-screen">
+    <div class="w-96 flex flex-col items-center bg-white shadow-lg rounded-md">
+        <!-- Cabeçalho -->
+        <div class="w-full bg-blue-500 flex justify-around items-center py-2 rounded-t-md text-white">
+            <div class="text-2xl font-bold">AFILIADAS</div>
+            <div class="w-10 h-10">
+                <img src="logo 40x40.png" alt="logo pequeno da Rede Globo" class="w-full h-full">
+            </div>
+            <div class="text-2xl font-bold">GESTÃO</div>
+        </div>
+
+        <!-- Formulário de Login -->
+        <div class="w-full p-6">
+            <form id="formularioDeLogin" class="space-y-6">
+                <!-- Campo Usuário -->
+                <div>
+                    <label for="username" class="block text-blue-500 font-bold mb-2">Usuário:</label>
+                    <input type="text" id="username" name="username" required
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <!-- Campo Senha -->
+                <div>
+                    <label for="password" class="block text-blue-500 font-bold mb-2">Senha:</label>
+                    <input type="password" id="password" name="password" required
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <!-- Botões -->
+                <div class="flex justify-between">
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600">Login</button>
+                    <button type="button" id="cancelButton" class="bg-white text-gray-700 px-4 py-2 border border-gray-300 rounded shadow hover:bg-gray-100">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+document.getElementById('formularioDeLogin').addEventListener('submit', function(event) {
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+
+    
+    clearErrorMessages();
+
+    let hasError = false;
+
+    if (!username.value.trim()) {
+        showError(username, 'O campo Usuário não pode estar vazio.');
+        hasError = true;
+    } else {
+       
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(username.value)) {
+            showError(username, 'Por favor, insira um e-mail válido no campo Usuário.');
+            hasError = true;
+        }
+    }
+
+    // Verificar se o campo de senha está vazio
+    if (!password.value.trim()) {
+        showError(password, 'O campo Senha não pode estar vazio.');
+        hasError = true;
+    } else {
+        
+        const numericRegex = /^\d+$/;
+        if (!numericRegex.test(password.value)) {
+            showError(password, 'A senha deve conter apenas números.');
+            hasError = true;
+        }
+    }
+
+    // Impede o envio do formulário se houver erros
+    if (hasError) {
+        event.preventDefault();
+    }
+});
+
+// Função para exibir mensagens de erro
+function showError(input, message) {
+    const errorElement = document.createElement('div');
+    errorElement.className = 'text-red-500 text-sm mt-1';
+    errorElement.textContent = message;
+    input.parentNode.appendChild(errorElement);
+}
+
+// Função para limpar mensagens de erro existentes
+function clearErrorMessages() {
+    const errors = document.querySelectorAll('.text-red-500');
+    errors.forEach(error => error.remove());
+}
+
+
+    </script>
+    
+    
+
+    
+</body>
+</html>

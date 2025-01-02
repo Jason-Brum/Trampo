@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova tela de login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200 flex justify-around items-center h-screen">
+    <div class="w-96 flex flex-col items-center bg-white shadow-lg rounded-md">
+        <!-- Cabeçalho -->
+        <div class="w-full bg-blue-500 flex justify-center items-center py-4 rounded-t-md text-white gap-x-2">
+            <span class="text-2xl font-bold">AFILIADAS</span>
+            <div class="w-10 h-10">
+                <img src="logo 40x40.png" alt="logo pequeno da Rede Globo" class="w-full h-full">
+            </div>
+            <span class="text-2xl font-bold">GESTÃO</span>
+        </div>
+
+        <!-- Formulário de Login -->
+        <div class="w-full p-6">
+            <form id="formularioDeLogin" class="space-y-6">
+                <!-- Campo Usuário -->
+                <div>
+                    <label for="username" class="block text-blue-500 font-bold mb-2">Usuário:</label>
+                    <input type="text" id="username" name="username" 
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <!-- Campo Senha -->
+                <div>
+                    <label for="password" class="block text-blue-500 font-bold mb-2">Senha:</label>
+                    <input type="password" id="password" name="password" 
+                        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <!-- Botões -->
+                <div class="flex justify-around">
+                    <button type="submit" class="bg-blue-500 text-white px-7 py-2 rounded shadow hover:bg-blue-600">Login</button>
+                    <button type="button" id="cancelButton" class="bg-white text-gray-700 px-4 py-2 border border-gray-300 rounded shadow hover:bg-gray-100">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script_sem_required_test.js"></script>
+</body>
+</html>

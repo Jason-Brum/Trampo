@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Afiliadas Gestão (VERDE)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
 </head>
 <body class="bg-gray-100 text-gray-800">
     <div class="container mx-auto px-4 py-6">
-        <header class="flex-justify-between items-center mb-6">
-            <div class="text-2xl font-bold text-green-600">AFILIADAS</div>
-            <div class="w-10 h-10">
-                <img src="Logo cor 71b44d.png" alt="logo globo verde">
+        <header class="flex justify-between items-center mb-6">
+            <div class="flex items-center gap-4">
+                <div class="text-2xl font-bold text-green-600">AFILIADAS</div>
+                <div class="w-10 h-10">
+                    <img src="Logo cor 71b44d.png" alt="logo globo">
+                </div>
+                <div class="text-2xl font-bold text-green-600">GESTÃO</div>
             </div>
-            <div class="text-2xl font-bold text-green-500 text-sm">Olá Hugo Leonardo</div>
+            <div class="text-sm text-green-500 flex items-center gap-2">
+                <span>Olá Hugo Leonardo</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
         </header>
 
         <nav class="flex gap-6 bg-gray-200 py-4 px-6 rounded-md mb-6">
@@ -26,7 +31,8 @@
             <a href="#" class="font-bold text-gray-800">NOVA CATEGORIA</a>
         </nav>
 
-        <div class="text-sm text-gray-600 bg-gray-50 p-4 mb-6 rounded-md">CONVENÇÕES INTERNET &gt; CONSULTAR
+        <div class="text-sm text-gray-600 bg-gray-50 p-4 mb-6 rounded-md">
+            CONVENÇÕES INTERNET &gt; CONSULTAR
         </div>
 
         <section>
@@ -34,37 +40,37 @@
                 <h2 class="text-lg font-bold">CONVENÇÕES INTERNET</h2>
                 <div class="flex gap-2">
                     <button class="flex items-center gap-2 bg-white text-green-500 border border-green-500 px-4 py-2 rounded-md font-bold hover:bg-green-500 hover:text-white">
-                        <i class="fas fa-file-export"></i>Exportar
+                        <i class="fas fa-file-export"></i> Exportar
                     </button>
                     <button class="flex items-center gap-2 bg-white text-green-500 border border-green-500 px-4 py-2 rounded-md font-bold hover:bg-green-500 hover:text-white">
-                        <i class="fas fa-copy"></i>Cópia de Índices
+                        <i class="fas fa-copy"></i> Cópia de Índices
                     </button>
                 </div>
             </div>
 
             <div class="bg-gray-50 p-6 rounded-md mb-6 border border-gray-300">
-                <h3 class="relative font-bold text-green-600 text-lg mb-4">
+                <h3 class="relative font-bold text-green-600 text-lg mb-6">
                     CONSULTAR CONVENÇÕES
                     <span class="absolute left-0 top-0 h-full w-1 bg-green-600"></span>
                 </h3>
-                <form class="grid grid-cols-2 gap-4">
-                    <div>
+                <form class="flex flex-wrap gap-4 items-center">
+                    <div class="flex flex-col">
                         <label for="afiliada" class="block font-bold text-sm mb-1">Afiliada</label>
-                        <input type="text" id="afiliada" name="afiliada" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        <input type="text" id="afiliada" name="afiliada" class="w-40 px-2 py-1 border border-gray-300 rounded-md">
                     </div>
-                    <div>
+                    <div class="flex flex-col">
                         <label for="codigo" class="block font-bold text-sm mb-1">Código Contábil</label>
-                        <input type="text" id="codigo" name="codigo" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        <input type="text" id="codigo" name="codigo" class="w-40 px-2 py-1 border border-gray-300 rounded-md">
                     </div>
-                    <div>
+                    <div class="flex flex-col">
                         <label for="mnemonico" class="block font-bold text-sm mb-1">Mnemonico</label>
-                        <input type="text" id="mnemonico" name="mnemonico" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        <input type="text" id="mnemonico" name="mnemonico" class="w-40 px-2 py-1 border border-gray-300 rounded-md">
                     </div>
                     <div class="flex items-center">
                         <input type="checkbox" id="inativa" name="inativa" class="mr-2">
                         <label for="inativa" class="font-bold text-sm">Inativa</label>
                     </div>
-                    <button type="submit" class="col-span-2 bg-green-500 text-white px-4 py-2 rounded-md font-bold flex items-center justify-center gap-2">
+                    <button type="submit" class="bg-green-500 text-white px-3 py-1 rounded-md font-bold flex items-center gap-2">
                         <i class="fas fa-search"></i> Buscar
                     </button>
                 </form>
@@ -94,16 +100,5 @@
             </div>
         </section>
     </div>
-</body>
-</html>
-                </form>
-            </div>
-        </section>
-
-
-
-    </div>
-
-    
 </body>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afiliadas Gestão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .submenu { display: none; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto px-4 py-6">
+        <header class="flex justify-between items-center mb-6">
+            <div class="flex items-center gap-4">
+                <div class="text-2xl font-bold text-green-600">AFILIADAS</div>
+                <div class="w-10 h-10">
+                    <img src="Logo cor 71b44d.png" alt="logo globo">
+                </div>
+                <div class="text-2xl font-bold text-green-600">GESTÃO</div>
+            </div>
+            <div class="text-sm text-green-500 flex items-center gap-2">
+                <span>Olá Hugo Leonardo</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </header>
+
+        <nav class="relative bg-gray-200 py-4 px-6 rounded-md mb-6">
+            <div class="flex gap-6">
+                <div class="menu-item relative">
+                    <a href="#" class="font-bold text-gray-800 flex items-center gap-1" onclick="toggleSubmenu(event, 'submenu-afiliadas')">AFILIADAS <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="menu-item relative">
+                    <a href="#" class="font-bold text-gray-800 flex items-center gap-1" onclick="toggleSubmenu(event, 'submenu-tv')">TV ABERTA <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="menu-item relative">
+                    <a href="#" class="font-bold text-gray-800 flex items-center gap-1" onclick="toggleSubmenu(event, 'submenu-internet')">INTERNET <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="menu-item relative">
+                    <a href="#" class="font-bold text-gray-800 flex items-center gap-1" onclick="toggleSubmenu(event, 'submenu-financeiro')">FINANCEIRO <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+                <div class="menu-item relative">
+                    <a href="#" class="font-bold text-gray-800 flex items-center gap-1" onclick="toggleSubmenu(event, 'submenu-nova-categoria')">NOVA CATEGORIA <i class="fas fa-chevron-down text-xs"></i></a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="submenu-container" class="flex gap-4 mt-4"></div>
+    </div>
+
+    <script>
+        function toggleSubmenu(event, submenuId) {
+            event.preventDefault();
+            const submenuContainer = document.getElementById("submenu-container");
+            submenuContainer.innerHTML = "";
+
+            const submenus = {
+                "submenu-afiliadas": ["INCLUIR", "CONSULTAR", "AGRUPAMENTO"],
+                "submenu-tv": ["INCLUIR CONVENÇÃO", "CONSULTAR CONVENÇÃO", "RECEITAS", "LANÇAMENTOS", "PRESTAÇÃO DE CONTAS", "RELATÓRIOS"],
+                "submenu-internet": ["INCLUIR CONVENÇÃO", "CONSULTAR CONVENÇÃO", "RECEITAS", "LANÇAMENTOS", "PRESTAÇÃO DE CONTAS", "RELATÓRIOS"],
+                "submenu-financeiro": ["FATURAMENTO"],
+                "submenu-nova-categoria": ["INCLUIR", "CONSULTAR"]
+            };
+
+            const colors = {
+                "submenu-afiliadas": "bg-green-200",
+                "submenu-tv": "bg-blue-200",
+                "submenu-internet": "bg-yellow-200",
+                "submenu-financeiro": "bg-red-200",
+                "submenu-nova-categoria": "bg-purple-200"
+            };
+
+            if (submenus[submenuId]) {
+                const submenuDiv = document.createElement("div");
+                submenuDiv.className = `submenu p-4 rounded-md shadow-md flex gap-4 ${colors[submenuId]}`;
+                submenus[submenuId].forEach(item => {
+                    const link = document.createElement("a");
+                    link.href = "#";
+                    link.className = "px-4 py-2 text-gray-700 hover:bg-gray-300 rounded uppercase";
+                    link.textContent = item;
+                    submenuDiv.appendChild(link);
+                });
+                submenuContainer.appendChild(submenuDiv);
+            }
+        }
+    </script>
+</body>
+</html>

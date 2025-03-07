@@ -47,15 +47,6 @@ const menuData = [
 const Menu = () => {
   return (
     <nav className="bg-gray-200 py-3 px-6 rounded-md mt-4 md:mt-0 w-full">
-      {/* Ícone do menu hamburguer visível apenas em telas pequenas */}
-      <div className="md:hidden flex justify-end">
-        <button
-          className="p-2 text-gray-800"
-          onClick={() => document.getElementById("menu-items").classList.toggle("hidden")}
-        >
-          <i className="fas fa-bars text-2xl"></i>
-        </button>
-      </div>
 
       {/* Menu - horizontal em telas grandes, dropdown em telas pequenas */}
       <ul

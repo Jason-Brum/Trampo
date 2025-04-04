@@ -1,10 +1,16 @@
 import React from 'react';
 import Navbar from './components/Navbar';
+import Menu from './components/Menu';
+
+
 
 const App = () => {
   return (
+    
+
     <div className="container mx-auto p-4">
       <Navbar isVertical={false} />
+
 
       <div className="breadcrumb bg-white text-sm text-gray-700 mt-4 px-6 py-3 rounded-md shadow-sm">
         CONVENÇÕES INTERNET &gt; CONSULTAR

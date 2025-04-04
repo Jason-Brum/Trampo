@@ -73,7 +73,8 @@ function Menu({ isVertical = false }) { //Função onde realmente o menu é mont
             ></i>
           </button> {/*Só exibe o componente submenu se o submenuAtivo for igual ao título do menuItem.*/}
 
-          {submenuAtivo === menuItem.titulo && <SubMenu items={menuItem.subMenu} isVertical={isVertical} />}
+          {submenuAtivo === menuItem.titulo && 
+          <SubMenu items={menuItem.subMenu} isVertical={isVertical} />}
         </div>
       ))}
     </div>

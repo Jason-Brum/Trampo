@@ -1,51 +1,9 @@
 import { useState } from "react";
 import SubMenu from "./SubMenu";
 
-const menuData = [
-  {
-    titulo: "AFILIADAS",
-    subMenu: [
-      { titulo: "INCLUIR", link: "#" },
-      { titulo: "CONSULTAR", link: "#" },
-      { titulo: "AGRUPAMENTO", link: "#" },
-    ],
-  },
-  {
-    titulo: "TV ABERTA",
-    subMenu: [
-      { titulo: "INCLUIR CONVENÇÃO", link: "#" },
-      { titulo: "CONSULTAR CONVENÇÃO", link: "#" },
-      { titulo: "RECEITAS", link: "#" },
-      { titulo: "LANÇAMENTOS", link: "#" },
-      { titulo: "PRESTAÇÃO DE CONTAS", link: "#" },
-      { titulo: "RELATÓRIOS", link: "#" },
-    ],
-  },
-  {
-    titulo: "INTERNET",
-    subMenu: [
-      { titulo: "INCLUIR CONVENÇÃO", link: "#" },
-      { titulo: "CONSULTAR CONVENÇÃO", link: "#" },
-      { titulo: "RECEITAS", link: "#" },
-      { titulo: "LANÇAMENTOS", link: "#" },
-      { titulo: "PRESTAÇÃO DE CONTAS", link: "#" },
-      { titulo: "RELATÓRIOS", link: "#" },
-    ],
-  },
-  {
-    titulo: "FATURAMENTO",
-    subMenu: [{ titulo: "INCLUIR CONVENÇÃO", link: "#" }],
-  },
-  {
-    titulo: "NOVA CATEGORIA",
-    subMenu: [
-      { titulo: "INCLUIR", link: "#" },
-      { titulo: "CONSULTAR", link: "#" },
-    ],
-  },
-];
-
-function Menu({ isVertical = false }) {
+//O mennuData agora é passado como props para o componente Menu, permitindo que ele seja reutilizado com diferentes dados de menu.
+//O componente Menu agora aceita uma propriedade isVertical que determina se o menu deve ser exibido verticalmente ou horizontalmente.
+function Menu({ isVertical = false, menuData = [] }) {
   const [submenuAtivo, setSubmenuAtivo] = useState(null);
   const [menuAberto, setMenuAberto] = useState(false);
 
@@ -73,7 +31,7 @@ function Menu({ isVertical = false }) {
         </div>
       </header>
 
-      {/* BOTÃO DE MENU HAMBURGUER (só aparece se isVertical for true) */}
+      {/* BOTÃO DE MENU HAMBURGUER */}
       {isVertical && (
         <div className="mt-4 px-6">
           <button
@@ -88,11 +46,9 @@ function Menu({ isVertical = false }) {
       {/* MENU PRINCIPAL */}
       {(isVertical ? menuAberto : true) && (
         <nav className="bg-gray-200 py-3 px-6 rounded-md w-full md:w-auto mt-4">
-          <div
-            className={`flex ${isVertical ? "flex-col" : "flex-wrap"} gap-1`}
-          >
+          <div className={`flex ${isVertical ? "flex-col" : "flex-wrap"} gap-1`}>
             {menuData.map((menuItem) => (
-              <div key={menuItem.titulo} className="relative">
+              <div key={menuItem.titulo} className="relative inline-block">
                 <button
                   onClick={() => toggleSubmenu(menuItem.titulo)}
                   className={`font-bold text-gray-800 flex items-center gap-1 px-4 py-1 rounded-md ${

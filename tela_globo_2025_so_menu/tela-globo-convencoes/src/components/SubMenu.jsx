@@ -1,14 +1,12 @@
-function SubMenu({ items, isVertical }) { //Componente Submenu recebe duas propriedades: items e isVertical. items é um array de objetos que contém os dados do submenu, e isVertical é um booleano que define se o submenu deve ser exibido verticalmente ou horizontalmente.
+function SubMenu({ items, isVertical }) {
   return (
     <div
       className={`z-10 bg-gray-300 shadow-md rounded-md p-2 flex gap-2
         ${isVertical
-            ? 'absolute top-0 left-[13%] flex-col'
-            : 'absolute mt-2 flex-row'}
-          
-      `}
-      >
-        {items.map((item, index) => (
+          ? 'absolute top-0 left-0 translate-x-full flex-col'
+          : 'absolute mt-2 flex-row'}`}
+    >
+      {items.map((item, index) => (
         <a
           key={index}
           href={item.link}
@@ -20,6 +18,5 @@ function SubMenu({ items, isVertical }) { //Componente Submenu recebe duas propr
     </div>
   );
 }
-  
-  export default SubMenu;
-  
+
+export default SubMenu; 

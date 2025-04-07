@@ -1,11 +1,15 @@
-import React from 'react';
-import Menu from './components/Menu';
+import React from "react";
+import Menu from "./components/Menu";
+import menuData from "./components/menuData";
+
 
 const App = () => {
   return (
+
+    
     <div className="container mx-auto p-4">
-      {/* Menu renderizado */}
-      <Menu isVertical={true} />
+      {/* Menu renderizado com dados passados por props */}
+      <Menu isVertical={true} menuData={menuData} />
 
       <div className="breadcrumb bg-white text-sm text-gray-700 mt-4 px-6 py-3 rounded-md shadow-sm">
         CONVENÇÕES INTERNET &gt; CONSULTAR
@@ -77,4 +81,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App;  

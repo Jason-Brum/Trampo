@@ -4,7 +4,8 @@ function SubMenu({ items, isVertical }) {
       className={`z-10 bg-gray-300 shadow-md rounded-md p-2 flex gap-2
         ${isVertical
           ? 'absolute top-0 left-0 translate-x-full flex-col'
-          : 'absolute mt-2 flex-row'}`}
+          : 'absolute mt-2 flex-row'} `
+}
     >
       {items.map((item, index) => (
         <a

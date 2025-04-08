@@ -1,6 +1,6 @@
 // src/components/menuData.js
 
-const menuData = [
+const dadosDoMenu = [
   {
     titulo: "AFILIADAS",
     subMenu: [
@@ -44,4 +44,4 @@ const menuData = [
   },
 ];
 
-export default menuData;
+export default dadosDoMenu;
